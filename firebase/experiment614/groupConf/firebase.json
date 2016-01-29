@@ -1,0 +1,9 @@
+{
+  "firebase": "groupchatsbcc",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

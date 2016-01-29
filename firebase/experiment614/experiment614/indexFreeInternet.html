@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wont you be my neighbor?</title>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    <script src='js/chance.min.js'></script>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div class="sidebar-nav">
+                <div class="sidebar-brand">
+                    <span>
+                        Live Chat
+                    </span>
+                </div>
+                
+                <div class="sidebar-chat rounded">
+                  <div class="nameInput">
+                    <label for="nameInput">Name:</label>
+                    <input type='text' id='nameInput' placeholder='enter a username...'>
+                  </div>
+
+                  <div class="messages">
+                    <ul id='example-messages' class="example-chat-messages"></ul>
+                  </div>
+                  <div class="messageInput">
+                    <input type='text' id='messageInput'  placeholder='Type a message...'>
+                  </div>
+                  
+                </div>
+
+                <div class="sidebar-element">
+                    <a href="#menu-toggle" class="menu-toggle">
+                        Close Chat
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-inverse navbar-static" >
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                    <span> Experiment 614 </span>
+                  </a>
+                </div>
+                <a href="#menu-toggle" class="btn btn-default menu-toggle navbar-right navbar-btn" style="margin-right: 15px">Toggle Live Chat</a>
+              </div>
+            </nav>
+            <div class="container-fluid">
+                <div class="jumbotron row">
+                    <a href="https://experiment614.firebaseapp.com/">
+                      <div class="alert alert-danger" role="alert" style="text-align:center"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp; Sorry, there isnt really free internet. But now you found the local bullitin board! Book mark and use your own stinkin' internet! &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></div>
+                    </a>
+                    <div class="col-lg-2 col-sm-6 col-md-6">
+                        <img src="media/mrRodgers.png" alt="Mr. Rodgers" class="img-responsive" width="275" style="padding: 25px;">
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 col-md-6" style="padding: 15px;">
+                      <h2>Hello, Neighbor!</h2>
+                      <p class="text-justify">Welcome to the community bulletin board! Here you can say something in your neighborhood anonymously or not. This little bit of the internet is dedicated to the folk around 614 Grand. Be courteous and feel free to join in!</p>
+                      <p><a class="btn btn-primary" href="about.html" role="button">Learn more</a></p>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 col-md-12 ">
+                      <div class="thumbnail new-note box-shadow--2dp">
+                        <div class="new-note">
+                        <h3 style="text-align: center;">Enter A New Note</h3>
+                          <div>
+                            <label for="urlInput">Image URL:</label>
+                            <input type='text' id='urlInput' placeholder=' (optional) '>
+                          </div>
+                          <div>
+                            <label for="titleInput">Note Title:</label>
+                            <input type='text' id='titleInput' placeholder='Ex: Please No Smoking'>
+                          </div>
+                          <div class="message">
+                            <label for="messageInputNote">Message :</label>
+                            <textarea id='messageInputNote' rows="3" style="width:100%;" placeholder="Ex: Understanding that you choose to smoke, please do it somewhere that it doesn't come into the apartments. It's terrible for those who have asthma. Thank you!"></textarea>
+                          </div>
+                          <div class="message">
+                            <a class="btn btn-primary" href="#" id="saveNote">Save Note</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="note-insert" class="row">
+
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- You handsome devil you! -->
+    <script src='js/rodgers.min.js'></script>
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+
+    startRodgersApp();
+
+    $(".menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

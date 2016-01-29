@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<!-- Load c3.css -->
+		<link href="bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+
+		<!-- Get Firebase Dependency -->
+		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+		<!-- Get jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Get d3 (visual library) -->
+		<script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+		<!-- Get C3 (charts for d3) -->
+		<script src="bower_components/c3/c3.min.js"></script>
+
+		<!-- Setup Page -->
+		<title>Front Room Temperature</title>
+	</head>
+	<body>
+		<div><h1 style="padding: 10px">Front Room Temperature</h1></div>
+		
+		<!-- OLD = For pushing just the temps -->
+		<!-- <div id="main" class="mainStuff" style="background: blue;"></div> -->
+		<div id="temp"></div>
+
+
+	</body>
+
+
+	<script>
+		///////////////////////////////////////////
+		//////////// Script Parameters ////////////
+		///////////////////////////////////////////
+
+		// Set to true to see console.log's
+		var debug = true;
+
+		// Total number of readings to show
+		var limitNumber = 75;
+		///////////////////////////////////////////
+
+		// Firebase Ref
+		var ref = new Firebase("https://.firebaseio.com/");
+		// Ref for front room
+		var frontRoom = ref.child("devices").child("front room");
+
+		// CHARTS //
+		// Temperature
+		var tempChart = c3.generate({
+			bindto: '#temp',
+		    data: {
+		        xs: {'Node Sensor #A942': 'x1',
+		        	 'Node Sensor #B435': 'x2'
+		    	},
+		        //xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+		        columns: [
+		        	['x1', 1450001263432],
+		        	['x2', 1450001263432],
+		            ['Node Sensor #A942', 0],
+		          	['Node Sensor #B435', 0]  
+		        ],
+		        types: { 'Node Sensor #A942' : 'spline','Node Sensor #B435' : 'spline'}
+		    },
+		    axis: {
+		        x: {
+		            type: 'timeseries',
+		            tick: {
+		                format: '%d'
+		            }
+		        }
+		    }
+		});
+
+		////// UPDATE TEMP CHART //////
+		// tempData is expected to be an array
+		var loadTemp = function() {
+			//TODO: Verify that tempData is valid
+
+			tempChart.load({
+	        columns: [
+	            	tempData1, tempTime1, tempData2, tempTime2
+	        	]
+	    	});
+		};
+
+		////////////////////////////////////////////////////////////
+		//////////////// Begin Firebase Data Gather ////////////////
+		////////////////////////////////////////////////////////////
+
+		// NOTE: I started with just one chart, then wanted to see what it would looklike with two... so i 
+		// just doubled everything instead of making proper functions.... so this could be cleaned up alot
+
+		var tempData1 = ['Node Sensor #A942'];
+		var tempTime1 = ['x1'];
+
+		var tempData2 = ['Node Sensor #B435'];
+		var tempTime2 = ['x2'];
+
+		// Pulls each child starting w/oldest first
+		// "Listens" to any new children added after that
+
+		// First sensor
+		frontRoom.child("A942").limitToLast(limitNumber).on("child_added", function(dataIn){
+			// Turn from firebase obect into usable data
+			data = dataIn.val();
+			if(debug){console.log("Data: ", data);};
+
+			if(tempData1.length >= limitNumber){
+				tempData1.splice(1,1);
+				tempTime1.splice(1,1);
+			}
+
+			// push to local array for chart to display
+			tempData1.push(data.temp);
+			tempTime1.push(new Date(data.time));
+			
+			if(debug){
+				console.log("Array Temp: ", tempData1);
+				console.log("Array Time: ", tempTime1);
+			};
+
+			loadTemp();
+
+			// OLD -- Was just listing out temp as divs/text...
+			// $( "#main" ).prepend("<div> Temp: " + data.val().temp + "</div>");
+		});
+
+
+		// Second Sensor
+		frontRoom.child("B435").limitToLast(limitNumber).on("child_added", function(dataIn){
+			// Turn from firebase obect into usable data
+			data = dataIn.val();
+			if(debug){console.log("Data: ", data);};
+
+			if(tempData2.length >= limitNumber){
+				tempData2.splice(1,1);
+				tempTime2.splice(1,1);
+			}
+
+			// push to local array for chart to display
+			tempData2.push(data.temp);
+			tempTime2.push(new Date(data.time));
+			
+			// if(debug){
+			// 	console.log("Array Temp: ", tempData2);
+			// 	console.log("Array Time: ", tempTime2);
+			// };
+
+			loadTemp();
+
+		});
+
+
+	</script>
+
+
+</html>
