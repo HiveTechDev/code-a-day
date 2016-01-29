@@ -1,0 +1,116 @@
+<html>
+<head>
+
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////
+// Tyler Hall - www.Hive.technology                                             //
+// Code A Day Challenge                                                         //
+//                                                                              //
+// This software is not intended for redistribution, as such it is not fully    //
+// documented or gaurenteed.                                                    //
+//                                                                              //
+// This is pretty much not even important enough to put a licence on.           //
+// Yeah, I went there. Contact me with questions.                               //
+//                                                                              //
+//////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
+// Objective:   Messing around with d3 and squares	- Just having fun   		// 
+// 				Came back and worked on it some more = Couldn't sleep	      	//
+// 				TO DO: make colors shades of one color (greyscale, orgnge/green //
+//////////////////////////////////////////////////////////////////////////////////
+-->
+
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body style="margin:0; padding:0;">
+	<script>
+	function updateWindow(){
+	    var x = window.innerWidth;
+	    var y = window.innerHeight;
+	    svg.attr("width", x).attr("height", y);
+	}
+
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+
+
+	// Adjust square size (in px)
+	var squareSize = 30;
+	// Turn on/off the mouseover
+	var mouseOverON = true;
+
+	// Create only what we need to cover the screen
+	var numberRow = Math.floor(window.innerWidth / squareSize +1);
+	var numberCol = Math.floor(window.innerHeight / squareSize +1);
+
+	var changeTime = 2000;
+
+	function rectData(){
+		
+		var squares = [];
+
+		for (var i = 0; i < numberRow; i++) {
+			for (var j = 0; j < numberCol; j++) {
+				squares.push({"x_Pos" : i * squareSize, "y_Pos" : j * squareSize, "color" : getRandomColor()})
+			};
+		};
+		return squares;
+	}
+
+	function buildRects(){
+		var data = rectData();
+		svg.selectAll("rect").remove();
+		var rects = svg.selectAll("rect").data(data);
+		rects.enter()
+			.append("rect")
+				.attr("x", function (d) { return d.x_Pos; })
+				.attr("y", function (d) { return d.y_Pos; })
+				.attr("width", squareSize)
+				.attr("height", squareSize)
+				.on("mouseover", mouseover)
+				.transition().ease("sin").delay(Math.random() * 10).duration(changeTime)
+				.style("fill", function(d) { return d.color });
+	}
+
+	function mouseover(d) {
+		if(mouseOverON){
+		  this.parentNode.appendChild(this);
+		  var origColor = d3.select(this).style("fill");
+		  d3.select(this)
+		    .transition()
+		      .duration(80)
+		      .style("fill", "white")
+		    .transition()
+		      .duration(800)
+		      .style("fill", origColor);
+		}
+
+	}
+
+	function getRandomColor() {
+	    var letters = '0123456789ABCDEF'.split('');
+	    var color = '#';
+	    for (var i = 0; i < 6; i++ ) {
+	        color += letters[Math.floor(Math.random() * 16)];
+	    }
+	    return color;
+	}
+
+	function changeColor() {
+      	d3.select(this).transition().ease("sin").delay(2).duration(changeTime).style('fill', getRandomColor());
+	}
+
+	var svg = d3.select("body").append("svg")
+		.attr("width", width)
+		.attr("height", height);
+
+	buildRects();
+
+	setInterval(function() {
+		svg.selectAll("rect").each(changeColor);
+	}, changeTime);
+
+	</script>
+</body>
+</html>

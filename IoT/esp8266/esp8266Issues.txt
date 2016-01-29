@@ -1,0 +1,13 @@
+///
+
+
+
+// Verified working libraries and documentation
+https://github.com/adafruit/ESP8266-Arduino
+
+
+// SSL issues and RAM running out of space with Firebase
+https://github.com/esp8266/Arduino/issues/1084
+
+// Free heap
+http://bbs.espressif.com/viewtopic.php?t=854
