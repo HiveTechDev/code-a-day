@@ -24,6 +24,12 @@ Not all the code will be posted in this one repo. I may post other places, but I
 | 01.05.2016  	| [1](https://github.com/Koulwa/code-a-day/commit/f327659d5b0d7edb95b21a51770f721b8565913e) 		| Resolving arduino IDE problems - Recognizing libraries - Firbase push 	| Arduino, C++ |
 | 01.06.2016  	| [1](https://github.com/Koulwa/code-a-day/commit/d639665dee97b4365faedd7d407dfdc87f364876) 		| firebaseGet now working - Sometimes getting stack overflow - reboots esp8266 	| Arduino, C++ |
 | 01.07.2016  	|  		| Color changing squares, just for fun to mess around with d3 	| d3 |
+|   	|  		| 	|  |
+|   	|  		| 	|  |
+|   	|  		| 	|  |
+|   	|  		| 	|  |
+|   02.01.2016	|  	HiveTech	| AngularJS, Ionic, Node, Firebase	| Login for app and user token management |
+
 
 -------------------------------------------------------------------------------
 ## Licence

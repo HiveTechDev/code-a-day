@@ -1,0 +1,10 @@
+
+echo "Hold up... Doing my thang"
+gcc -c Contact.c
+gcc -c AddressBook.c
+echo "***"
+gcc -c main.c
+echo "**"
+gcc AddressBook.o Contact.o Contact.h AddressBook.h main.o -o main
+echo "*"
+echo "Address Compiled"
