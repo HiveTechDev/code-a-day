@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>AngularJs</title>
+    
+    
+    
+    
+        <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Bad+Script);
+@import url(http://fonts.googleapis.com/css?family=Nova+Mono);
+
+/* zocial */
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #bdc3c7;
+}
+
+h1 {
+  color: #7f8c8d;
+  font-family: 'Bad Script', cursive;
+  margin-bottom: 0px;
+}
+
+.content {
+  width: 400px;
+  margin: 0 auto;
+  background: #ecf0f1;
+  border-top: 5px solid #7f8c8d;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, .5);
+  font-family: 'Nova Mono', cursive;
+  font-size: 18px;
+}
+
+.header {
+  padding: 20px;
+  background: #ececec;
+}
+
+.name {
+  padding: 20px;
+  border-top: 2px solid rgb(200, 200, 200);
+  border-top-style: dashed;
+  color: #7f8c8d;
+  transition: all 1s;
+}
+
+input {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-family: 'Nova Mono', cursive;
+  color: #95a5a6;
+  width: 300px;
+}
+
+input:focus {
+  outline-color: transparent;
+}
+
+span:focus {
+  outline-color: transparent;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: #7f8c8d;
+  cursor: pointer;
+}
+
+.name button {
+  position: relative;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  float: right;
+  display: inline-block;
+  color: transparent;
+  transition: all .5s;
+}
+
+.name:hover button {
+  color: #7f8c8d;
+}
+    </style>
+
+    
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1>Test List Of Names</h1></center>
+  <div ng-controller="nameCtrl">
+    <div class="content">
+      <div class="header">
+        <div> Number of People: {{countNames()}}</div>
+
+        <div class="name" ng-repeat="name in names">
+          <span contenteditable="true">{{name.firstName | capitalize}} "Freakin" {{name.lastName | capitalize}} </span>
+          <button ng-click="names.splice($index, 1)">
+            <span class="entypo-cancel"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

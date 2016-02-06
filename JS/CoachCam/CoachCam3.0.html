@@ -1,0 +1,56 @@
+
+<!-- saved from url=(0029)http://www.sbcc.edu/coachcam/ -->
+<!-- 
+//////////////////////////////////////////////////////////////
+/////     Move the coach cam --- Like a boss            //////
+///// Author:   Tyler Hall (tyler@hive.technology)      //////
+/////       www.hive.technology                         //////
+///// How to use? Just open this page in your browser   //////
+//////////////////////////////////////////////////////////////
+ -->
+
+
+<html hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>CoachCam 3.0</title>
+   <script>
+   var locations = ['Home','Leadbetter', 'Campus Center', 'Physical Sciences', 'Humanities Building', 'Surf Conditions']
+    var count = 0;  // Start at "home"
+
+    window.setInterval(function(){
+      console.log("View: ", locations[count])
+      document.getElementById("currentLocation").innerHTML = locations[count];
+      setCameraView(locations[count])
+      if (count == locations.length-1){ count = 0}else{count++}
+    }, 3000);
+
+    function setCameraView(view)
+    {
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.open("GET","http://www.sbcc.edu/coachcam/move.php?preset=" + view,true);
+    xmlhttp.send();
+    } 
+   </script>
+
+<style type="text/css"></style></head><body><div align="center">
+   <img src="http://www.sbcc.edu/axis-cgi/mjpg/video.cgi?resolution=800x600"><br>
+   <br>
+   <div id="currentLocation"></div>
+   <button onclick="setCameraView(&#39;Home&#39;)">Home</button>
+   <button onclick="setCameraView(&#39;Leadbetter&#39;)">Leadbetter</button>
+   <button onclick="setCameraView(&#39;Campus Center&#39;)">Campus Center</button>
+   <button onclick="setCameraView(&#39;Physical Sciences&#39;)">Physical Science</button>
+   <!--button onclick="setCameraView('Friendship Plaza')">Friendship Plaza</button-->
+   <button onclick="setCameraView(&#39;Humanities Building&#39;)">Humanities Building</button>
+   <button onclick="setCameraView(&#39;Surf Conditions&#39;)">Surf Conditions</button>
+</div>
+<script type="text/javascript">(function () {
+        return window.SIG_EXT = {};
+      })()</script></body></html>
