@@ -1,6 +1,4 @@
 # Code - A - Day
-> If start doing it every day, even if its not that good, at least its did.
-- Abraham Lincoln
 
 ## Intro
 So I've been thinking that I spend WAY too much time setting up (especially hardware), researching, thinking about new ideas, and thinking about how those things COULD work... that its hard for me to get going and just start working on it. This code a day is in effort to just force myself to write some code, ANY code, every day this year. I sure hope I can do it.
@@ -30,27 +28,30 @@ Not all the code will be posted in this one repo. I may post other places, but I
 | 01.08.2016  	| [1](https://github.com/Koulwa/code-a-day/blob/master/IoT/esp8266/firebasePushGetBUILDJSON/firebasePushGetBUILDJSON.ino) 		| esp8266 JSON parsing from firebase	| Arduino, C++, Firebase |
 | 01.09.2016  	| Src [1](https://github.com/Koulwa/code-a-day/blob/master/IoT/esp8266/colorPicker/colorPicker.ino)		| working with the new esp8266, the ESPWitty (Drivers, Boardlayout and finding the pinout)	| Arduino, C++, Embedded Hardware |
 | 01.10.2016  	|  Src [1](https://github.com/Koulwa/code-a-day/blob/master/JS/CoachCam)		| Coachcam - Scripting the camera changes with HTTP requests -- Tried to solve the multiple HTTP requests w/in node script	| JS, HTML, Node |
-| 01.11.2016  	|  Src [1](https://github.com/Koulwa/code-a-day/blob/master/firebase/experiment614)	| Community message board - Send/Receive live messages, and make "notes" on the community bulletin board	| JS, HTML, Boostrap, Firebase |
+| 01.11.2016  	|  Src [1](https://github.com/Koulwa/code-a-day/blob/master/firebase/experiment614)	| Community message board - Send/Receive live messages, and make "notes" on the community bulletin board	| JS, HTML, Bootstrap, Firebase |
 |   ***** 	|  	*****	| ***** FIRST ROUND OF MIDTERMS *****	| ***** |
-|   01.18.2016	|  HiveTech (Private)	| Login for app and user token generator	| AngularJS, Ionic, Node, Firebase |
-|   02.20.2016	|  HiveTech (Private)	| Login for esp8266 and device token management	| AngularJS, Ionic, Node, Firebase |
-|   02.01.2016	|  HiveTech (Private)	| Token generator, security Rules	| JS, Node, Firebase |
-|   02.02.2016	|  HiveTech (Private)	| App Design	| AngularJS, Ionic, Node, Firebase |
-|   02.03.2016	|  HiveTech (Private)	| Login for app and user token management	| JS, Node, Firebase |
+|   01.18.2016	|  Hive.Tech (Private)	| Login for app and user token generator	| AngularJS, Ionic, Node, Firebase |
+|   02.20.2016	|  Hive.Tech (Private)	| Login for esp8266 and device token management	| AngularJS, Ionic, Node, Firebase |
+|   02.01.2016	|  Hive.Tech (Private)	| Token generator, security Rules	| JS, Node, Firebase |
+|   02.02.2016	|  Hive.Tech (Private)	| App Design	| AngularJS, Ionic, Node, Firebase |
+|   02.03.2016	|  Hive.Tech (Private)	| Login for app and user token management	| JS, Node, Firebase |
 |   02.05.2016	|  [LIVE!](http://codepen.io/HiveTech/full/wMEVaX/), Src [1](https://github.com/Koulwa/code-a-day/blob/master/JS/angularListNames/index.html)		| Exploring Angular - List of names with a filter	| AngularJS, CSS, HTML |
 |   	|  		| 	|  |
-|   	|  		| 	|  |
+|   ***** 	|  	*****	| ***** SECOND ROUND OF MIDTERMS *****	| ***** |
+|  02.11.2016 	|  Hive.Tech (Private)		| esp8266 Library	| Arduino, C++ |
 
 
 -------------------------------------------------------------------------------
 ## Licence
 
-I reserve the right to change the licence for any subsiquent files in this, but basically... this is how it goes.
+I reserve the right to change the license for any subsequent files in this, but basically... this is how it goes.
 
 
 Tyler Hall - www.Hive.technology
-Code A Day Challenge
+Code-A-Day Challenge
 This software is not intended for redistribution, as such it is not fully
 documented or guaranteed.
-This is pretty much not even important enough to put a license on.
-Yeah, I went there. Contact me with questions.
+This is pretty much not even important enough to elaborate on. This is a record of me trying to code more often, hopefully everyday. As such, much of this code may be not working, fragmented or otherwise imperfect.
+
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
