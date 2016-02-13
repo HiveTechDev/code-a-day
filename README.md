@@ -16,7 +16,7 @@ Not all the code will be posted in this one repo. I may post other places, but I
 | Date  		| Location 		| Description 	| Languages 	|
 | ------------- | ------------- | ------------- | ------------- |
 | 01.01.2016  	| [1](https://github.com/Koulwa/code-a-day/commit/5a58f9fb1414547346329c2bc8621324314a57a9)  | Git hub warning emailer (and texter) - Sends warnings when GitHub hasn't seen a commit for the day, New year joke script :: NOTE! :: Because I had set my global email variable to my work email, the commit doesn't show up on the calendar/history but... its there. You can see it | NodeJS  |
-| 01.02.2016 	| Src [1](https://github.com/Koulwa/code-a-day/commit/252a6246f6e14f0ac74a0f4e41f736c750033f4c), [2](https://github.com/Koulwa/code-a-day/commit/015bf7674a7fe76dc3b2d8ef766a5365ebf085d2)  | First take at esp8266 simple blink web server (finally affordable wireless! Excited for this), fixed the global email  | Arduino, C++  |
+| 01.02.2016 	| Src [1](https://github.com/Koulwa/code-a-day/commit/252a6246f6e14f0ac74a0f4e41f736c750033f4c), [2](https://github.com/Koulwa/code-a-day/commit/015bf7674a7fe76dc3b2d8ef766a5365ebf085d2)  | First take at esp8266 simple blink web server (finally affordable wireless! Excited for this), fixed the global email  | Arduino, C++  
 | 01.03.2016  	| Src [1](https://github.com/Koulwa/code-a-day/commit/087ca753d66a080f989d966e0e2eefb81349347f) | First take at GET command for esp8266 and firebase -- Getting data 	| Arduino, C++ 	|
 | 01.04.2016  	| Src [1](https://github.com/Koulwa/code-a-day/commit/1e6020a25c67077356f1ef261e331e0b255d9a26)		| Learning about README files and .mb markup for github 	| .mb Markup (github) |
 | 01.05.2016  	| Src [1](https://github.com/Koulwa/code-a-day/commit/f327659d5b0d7edb95b21a51770f721b8565913e) 		| Resolving Arduino IDE problems - Recognizing libraries - Firebase push 	| Arduino, C++ |
@@ -39,7 +39,7 @@ Not all the code will be posted in this one repo. I may post other places, but I
 |   	|  		| 	|  |
 |   ***** 	|  	*****	| ***** SECOND ROUND OF MIDTERMS *****	| ***** |
 |  02.11.2016 	|  Hive.Tech (Private)		| esp8266 Library	| Arduino, C++ |
-
+|  02.12.2016 	|  Hive.Tech (Private)		| reconfigure user data for app	| JS, Angular, Ionic, Firebase|
 
 -------------------------------------------------------------------------------
 ## Licence
