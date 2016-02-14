@@ -39,7 +39,8 @@ Not all the code will be posted in this one repo. I may post other places, but I
 |   	|  		| 	|  |
 |   ***** 	|  	*****	| ***** SECOND ROUND OF MIDTERMS *****	| ***** |
 |  02.11.2016 	|  Hive.Tech (Private)		| esp8266 Library	| Arduino, C++ |
-|  02.12.2016 	|  Hive.Tech (Private)		| reconfigure user data for app	| JS, Angular, Ionic, Firebase|
+|  02.12.2016 	|  Hive.Tech (Private)		| reconfigure user data for app, account delete, route redirect on auth/unauth| JS, Angular, Ionic, Firebase|
+|  02.13.2016 	|  Hive.Tech (Private)		| shared user data | JS, Angular, Ionic, Firebase|
 
 -------------------------------------------------------------------------------
 ## Licence
